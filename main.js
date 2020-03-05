@@ -5,6 +5,7 @@ var app = new Vue({
 		description: 'This is a great product. The best one in the web.',
 		image: './image/vmSocks-green-onWhite.jpg',
 		url: 'https://www.netshoes.com.br/',
-		inventory: 100
+		inventory: -1,
+		onSale: true
 	}
 })
