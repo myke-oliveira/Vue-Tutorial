@@ -26,4 +26,36 @@ var app = new Vue({
 			'P', 'M', 'G'
 		]
 	}
+});
+
+var menuApp = new Vue({
+	el: '#menu',
+	data: {
+        menus: [
+            {
+                "icon": "",
+                "label": "Produtos e assinaturas",
+                "url": "",
+                "target": "self"
+            },
+            {
+                "icon": "",
+                "label": "Alterar minha senha",
+                "url": "",
+                "target": "self"
+            },
+            {
+                "icon": "",
+                "label": "Editar meu perfil",
+                "url": "",
+                "target": "self"
+            },
+            {
+                "icon": "",
+                "label": "Quero me tornar um Afiliado ou Produtor na Monetizze. O que isso quer dizzer?",
+                "url": "",
+                "target": "blank"
+            }
+        ]
+    }
 })
