@@ -6,6 +6,24 @@ var app = new Vue({
 		image: './image/vmSocks-green-onWhite.jpg',
 		url: 'https://www.netshoes.com.br/',
 		inventory: -1,
-		onSale: true
+		onSale: true,
+		details: [
+			"80% cotton",
+			"20% polyester",
+			"Gender-neutral"
+		],
+		variants: [
+			{
+				id: 2234,
+				color: 'green'
+			},
+			{
+				id: 2235,
+				color: 'blue'
+			}
+		],
+		sizes: [
+			'P', 'M', 'G'
+		]
 	}
 })
