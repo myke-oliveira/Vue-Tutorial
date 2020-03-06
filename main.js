@@ -24,7 +24,8 @@ var app = new Vue({
 		],
 		sizes: [
 			'P', 'M', 'G'
-		]
+		],
+        cart: 0
 	}
 });
 
