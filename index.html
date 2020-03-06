@@ -5,7 +5,15 @@
 	<link rel="stylesheet" type="text/css" href="css/product_style.css">
 </head>
 <body>
-	<div class="nav-bar"></div>
+	<div class="nav-bar">
+		<div id="menu">
+			<ul>
+				<li v-for="menu in menus">
+					{{ menu.label }}
+				</li>
+			</ul>
+		</div>
+	</div>
 	<div id="app">
 		<div class="product">
 			<div class="product-image">
