@@ -4,9 +4,9 @@ var app = new Vue({
         product: 'Socks',
         brand: 'Vue Mastery',
         description: 'This is a great product. The best one in the web.',
-        image: './image/vmSocks-green-onWhite.jpg',
+        selectedVariant: 0,
         url: 'https://www.netshoes.com.br/',
-        inventory: -1,
+        inventory: 30,
         onSale: false,
         details: [
             "80% cotton",
@@ -16,12 +16,14 @@ var app = new Vue({
         variants: [{
                 id: 2234,
                 color: 'green',
-                image: './image/vmSocks-green-onWhite.jpg'
+                image: './image/vmSocks-green-onWhite.jpg',
+                quantity: 10
             },
             {
                 id: 2235,
                 color: 'blue',
-                image: './image/vmSocks-blue-onWhite.jpg'
+                image: './image/vmSocks-blue-onWhite.jpg',
+                quantity: 0
             }
         ],
         sizes: [
@@ -36,13 +38,20 @@ var app = new Vue({
         removeFromCart: function() {
             this.cart--;
         },
-        updateProduct: function(image) {
-            this.image = image;
+        updateProduct: function(index) {
+            this.selectedVariant = index;
+            console.log(index);
         }
     },
     computed: {
         title() {
             return this.brand + ' ' + this.product;
+        },
+        image() {
+            return this.variants[this.selectedVariant].image;
+        },
+        onSale() {
+            return this.variant[this.selectedVariant].quantity;
         }
     }
 });
