@@ -22,7 +22,7 @@
                 <a :href="url" target="blank"><img :src="image"></a>
             </div>
             <div class="product-info">
-                <h1>{{ product }}</h1>
+                <h1>{{ title }}</h1>
                 <p>{{ description }}</p>
                 <p v-if="inventory > 10">In Stock</p>
                 <p v-else-if="inventory > 0">Almost sold out!</p>
@@ -31,8 +31,7 @@
                 <ul>
                     <li v-for="detail in details">{{ detail }}</li>
                 </ul>
-                <div v-for="variant in variants" :key="variant.id">
-                    <p @mouseover="updateProduct(variant.image)">{{ variant.color }}</p>
+                <div @mouseover="updateProduct(variant.image)" v-for="variant in variants" :key="variant.id" class="color-box" :style="{ background: variant.color }">
                 </div>
                 <div>
                     <h2>Sizes</h2>
@@ -40,7 +39,7 @@
                         <li v-for="size in sizes">{{ size }}</li>
                     </ul>
                 </div>
-                <button v-on:click="addToCart">Add to Cart</button>
+                <button v-on:click="addToCart" :disabled="!onSale" :class="{ disabledButton: !onSale }">Add to Cart</button>
                 <button v-show="cart > 0" v-on:click="removeFromCart">Remove from Cart</button>
                 <div class="cart">Cart({{ cart }})</div>
             </div>

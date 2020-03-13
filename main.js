@@ -2,11 +2,12 @@ var app = new Vue({
     el: '#app',
     data: {
         product: 'Socks',
+        brand: 'Vue Mastery',
         description: 'This is a great product. The best one in the web.',
         image: './image/vmSocks-green-onWhite.jpg',
         url: 'https://www.netshoes.com.br/',
         inventory: -1,
-        onSale: true,
+        onSale: false,
         details: [
             "80% cotton",
             "20% polyester",
@@ -30,13 +31,18 @@ var app = new Vue({
     },
     methods: {
         addToCart: function() {
-            this.cart += 1;
+            this.cart++;
         },
         removeFromCart: function() {
-            this.cart -= 1;
+            this.cart--;
         },
         updateProduct: function(image) {
             this.image = image;
+        }
+    },
+    computed: {
+        title() {
+            return this.brand + ' ' + this.product;
         }
     }
 });
